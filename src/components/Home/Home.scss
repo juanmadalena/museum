@@ -1,23 +1,21 @@
 .c-home{
-    margin-top: 120px;
     background-color: #121210;
     height: 35vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right:0;
+    margin: auto;
+    text-align: center;
+    z-index: -1;
     &__logo{
-        border-bottom: white solid 1px;   
-        height: 90%;
+        height: 100%;
     } 
     &__img{
-        width: 100%;
+        width: 80%;
         filter: invert(1);
-    }
-    &__scroll{
-        position: absolute;
-        color: rgb(206, 206, 206);
-        top: 0;
-        font-weight: bold;
-        font-size: 14px;
+        opacity: 1;
+        border-bottom: rgba(0, 0, 0, 1) solid 4px ;
     }
 }

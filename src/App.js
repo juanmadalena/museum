@@ -1,28 +1,19 @@
 import './App.css';
-import axios from 'axios';
-import { useEffect, useState, useRef } from 'react'
-import { Home } from './components/Home/Home';
-import { Gallery } from './components/Gallery/Gallery';
+import { HomePage } from './Pages/HomePage';
+import { Route, Routes, useLocation, } from 'react-router-dom';
+import { ArtDetail } from './Pages/ArtDetail';
+import { AnimatePresence } from 'framer-motion';
 
 function App() {
-  const [art, setart] = useState([]);
-
-
-  useEffect(() => {
-    axios.get('https://www.rijksmuseum.nl/api/nl/collection?key=yCF8BjBo&involvedMaker=Rembrandt+van+Rijn')
-      .then(res => setart(res.data))
-  }, [])
-
-
-  console.log(art);
-
+  const location = useLocation();
   return (
-    <div className="main">
-      <div>
-        <Home />
-        <Gallery art={art} />
-      </div>
-    </div>
+    <AnimatePresence onExitComplete>
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" exact element={<HomePage />} />
+        <Route path=":objectNumber" element={<ArtDetail />} />
+      </Routes>
+    </AnimatePresence>
+
   );
 }
 

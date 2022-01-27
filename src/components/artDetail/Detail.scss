@@ -1,0 +1,46 @@
+.detail{
+    &__img{
+        position: absolute;
+    }
+    &__container{
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 50vw 50vw;
+    }
+    &__details{
+        align-self: center;
+        justify-content: center;
+        color: white;
+        grid-column: 2;
+        grid-row: 2;
+        padding-left: 1vw;
+    }
+    &__back{
+        grid-row: 1;
+        grid-column: 2;
+        align-self: start;
+        text-align: right;
+        padding-right: 5vw;
+        padding-top: 3vh;
+        color: white;
+    }
+    &__back>a{
+        color: white;
+        text-decoration: none;
+        animation-name: arrow;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+
+    }
+}
+@keyframes arrow{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
